@@ -118,13 +118,13 @@ autocmd! BufWritePost ~/.vimrc source ~/.vimrc
 " backup
 set noswapfile
 set backup                     " backups are nice ...
-set backupdir=~/.vim/backup
+set backupdir=~/._vim/backup
 
 " undo
 set undofile                   " persistent undo
 set undolevels=1000            " maximum number of changes that can be undone
 set undoreload=10000           " maximum number lines to save for undo on a buffer reload
-set undodir=~/.vim/undo
+set undodir=~/._vim/undo
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
