@@ -5,7 +5,10 @@ Personal vim config files.
 
 INSTALL
 -------
-`curl -L https://raw.githubusercontent.com/joest67/vim/master/install.sh | bash`
+
+.. code:: bash
+
+curl -L https://raw.githubusercontent.com/joest67/vim/master/install.sh | bash
 
 
 UPDATE
