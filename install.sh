@@ -10,5 +10,7 @@ echo "Cloning vim"
 /usr/bin/env git clone git://github.com/joest67/vim.git $HOME/.vim
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 
+mkdir $HOME/.vim/backup
+
 # install
 cd $HOME/.vim && make install || echo "Installation ERROR!"
