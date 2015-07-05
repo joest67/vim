@@ -2,6 +2,8 @@ vim
 ===
 Personal vim config files.
 
+Inspired by `lxyu <https://github.com/lxyu/vim>`_.
+
 
 INSTALL
 -------
