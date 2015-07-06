@@ -296,12 +296,6 @@ noremap <C-k> <C-w><C-k>
 noremap <C-h> <C-w><C-h>
 noremap <C-l> <C-w><C-l>
 
-" The following two lines conflict with moving to top and bottom of the
-" screen
-" If you prefer that functionality, comment them out.
-map <S-H> gT
-map <S-L> gt
-
 " lazy press <ESC>
 inoremap jk <Esc>
 
@@ -310,10 +304,6 @@ noremap <Leader>s :update<CR>
 
 "clearing highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
-
-"Fix home and end keybindings for screen
-map  [F $
-map  [H g0
 
 " Close the current buffer
 map <leader>d :bdelete<cr>
