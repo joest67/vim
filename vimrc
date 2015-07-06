@@ -148,9 +148,6 @@ set clipboard=unnamed
 
 " Ctrlp
     let g:ctrlp_working_path_mode = 'ra'
-    nnoremap <CR> :CtrlPBuffer<CR>
-    nnoremap <C-u> :CtrlPMRU<CR>
-    nnoremap <C-e> :CtrlPClearCache<CR>
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$',
         \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$\|\.pyc$\|__pycache__' }
@@ -160,6 +157,36 @@ set clipboard=unnamed
     let g:gitgutter_enabled = 1
     let g:gitgutter_realtime = 0
     let g:gitgutter_eager = 0
+
+" Tabularize {
+    if exists(":Tabularize")
+      nmap <leader>a= :Tabularize /=<CR>
+      vmap <leader>a= :Tabularize /=<CR>
+      nmap <leader>a: :Tabularize /:<CR>
+      vmap <leader>a: :Tabularize /:<CR>
+      nmap <leader>a:: :Tabularize /:\zs<CR>
+      vmap <leader>a:: :Tabularize /:\zs<CR>
+      nmap <leader>a, :Tabularize /,<CR>
+      vmap <leader>a, :Tabularize /,<CR>
+      nmap <leader>a<Bar> :Tabularize /<Bar><CR>
+      vmap <leader>a<Bar> :Tabularize /<Bar><CR>
+
+      " The following function automatically aligns when typing a
+      " supported character
+      inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+      function! s:align()
+          let p = '^\s*|\s.*\s|\s*$'
+          if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+              let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+              let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+              Tabularize/|/l1
+              normal! 0
+              call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+          endif
+      endfunction
+
+    endif
 
 " Indent guides
     let g:indent_guides_enable_on_vim_startup = 1
