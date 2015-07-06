@@ -50,7 +50,7 @@ QA
 
 1. ImportError: No module named ropevim
 
-   Install ropevim `extra_install`_
+   Install ropevim => `extra_install`_
 
 2. File "build/bdist.linux-x86_64/egg/ropemode/decorators.py", line 3, in <module> ImportError: No module named rope.base
 
@@ -58,7 +58,7 @@ QA
 
 3. ycm_client_support.[so|pyd|dll] and ycm_core.[so|pyd|dll] not detected; you need to compile YCM before using it. Read the docs!
 
-   Compile ycm `extra_install`_
+   Compile ycm => `extra_install`_
 
 4. Other
 
