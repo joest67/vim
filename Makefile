@@ -21,9 +21,9 @@ update: gitupdate vimupdate
 install: init update
 
 extra_install: gitupdate
-	. extra_install.sh
+	./extra_install.sh
 
 custom_install: gitupdate
-	. custom_install.sh
+	./custom_install.sh
 
 .PHONY: install update extra_install custom_install
