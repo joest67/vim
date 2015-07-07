@@ -14,3 +14,9 @@ mkdir $HOME/.vim/backup
 
 # install
 cd $HOME/.vim && make install || echo "Installation ERROR!"
+
+# extra_install
+cd $HOME/.vim && make extra_install || echo "Installation ERROR!"
+
+# custom_install
+cd $HOME/.vim && make custom_install || echo "Installation ERROR!"
