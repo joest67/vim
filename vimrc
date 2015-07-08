@@ -35,9 +35,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 
 " Perform all your vim insert mode completions with Tab
-" Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " vim mode that uses rope library to provide features like python refactorings
 Plugin 'python-rope/ropevim'
@@ -108,10 +108,6 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 set fencs=utf-8,gb2312,gbk     " Sets the default encoding
 filetype plugin indent on      " Automatically detect file types.
 
-" Save and return to normal mode on FocusLost
-au FocusLost * :silent! wall                 " Save on FocusLost
-au FocusLost * call feedkeys("\<C-\>\<C-n>") " Return to normal mode on FocustLost
-
 " When vimrc is edited, reload it
 autocmd! BufWritePost ~/.vimrc source ~/.vimrc
 
@@ -160,6 +156,8 @@ set clipboard=unnamed
 
 " Tabularize {
     if exists(":Tabularize")
+      nmap <leader>a\ :Tabularize /\<CR>
+      vmap <leader>a\ :Tabularize /\<CR>
       nmap <leader>a= :Tabularize /=<CR>
       vmap <leader>a= :Tabularize /=<CR>
       nmap <leader>a: :Tabularize /:<CR>
@@ -297,7 +295,7 @@ noremap <C-h> <C-w><C-h>
 noremap <C-l> <C-w><C-l>
 
 " lazy press <ESC>
-inoremap jk <Esc>
+" inoremap jk <Esc>
 
 " quick save
 noremap <Leader>s :update<CR>
