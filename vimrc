@@ -281,6 +281,9 @@ set shiftwidth=4  " use indents of 4 spaces
 set tabstop=4     " an indentation every four columns
 set softtabstop=4 " let backspace delete indent
 
+autocmd FileType css,less,html,jinja,javascript,php,puppet,yaml set shiftwidth=2
+autocmd FileType css,less,html,jinja,javascript,php,puppet,yaml set tabstop=2
+autocmd FileType css,less,html,jinja,javascript,php,puppet,yaml set softtabstop=2
 
 """""""""""""""""""""""""""""""""""""""""""""
 "                key binding                "
