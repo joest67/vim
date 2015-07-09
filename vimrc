@@ -35,9 +35,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 
 " Perform all your vim insert mode completions with Tab
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 
 " vim mode that uses rope library to provide features like python refactorings
 Plugin 'python-rope/ropevim'
@@ -141,6 +142,8 @@ set clipboard=unnamed
     " jump the cursor to the first detected issue
     let g:syntastic_auto_jump=1
 
+" jedi
+let g:jedi#documentation_command = "L"
 
 " Ctrlp
     let g:ctrlp_working_path_mode = 'ra'
