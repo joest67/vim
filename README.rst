@@ -24,7 +24,7 @@ ropevim
 
 .. code:: bash
 
-    $ cd $HOME/.vim/bundle/ropevim; python install setup.py
+    $ cd $HOME/.vim/bundle/ropevim; python setup.py install
 
 YouCompleteMe
 ^^^^^^^^^^^^^
