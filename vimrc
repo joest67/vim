@@ -358,16 +358,6 @@ map k gk
 " Ag, search
     nnoremap K :Ag!<SPACE>
 
-" Airline
-    " Use powerline patched fonts
-    let g:airline_powerline_fonts = 1
-    " automatically displays all buffers when there's only one tab open
-    let g:airline#extensions#tabline#enabled = 1
-    " theme airline
-    let g:airline_theme = 'base16'
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
-
 " Tagbar
     nnoremap <silent> <leader>t :TagbarToggle<CR>
 
