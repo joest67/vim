@@ -34,11 +34,8 @@ Plugin 'scrooloose/nerdtree'
 " git wrapper
 Plugin 'tpope/vim-fugitive'
 
-" Perform all your vim insert mode completions with Tab
-" Plugin 'ervandew/supertab'
-
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
+" best auto complete tool I have ever used(jedi, supertab...)
+Plugin 'Valloric/YouCompleteMe'
 
 " vim mode that uses rope library to provide features like python refactorings
 Plugin 'python-rope/ropevim'
@@ -56,7 +53,8 @@ Plugin 'bling/vim-airline'
 Plugin 'ap/vim-buftabline'
 
 "This plugin for Vim enable an auto-close chars feature for you.
-Plugin 'Townk/vim-autoclose'
+" conflict with youcompleteme
+" Plugin 'Townk/vim-autoclose'
 
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
@@ -326,6 +324,8 @@ map k gk
       vmap <leader>a= :Tabularize /=<CR>
       nmap <leader>a: :Tabularize /:<CR>
       vmap <leader>a: :Tabularize /:<CR>
+      nmap <leader>a| :Tabularize /|<CR>
+      vmap <leader>a| :Tabularize /|<CR>
       nmap <leader>a:: :Tabularize /:\zs<CR>
       vmap <leader>a:: :Tabularize /:\zs<CR>
       nmap <leader>a, :Tabularize /,<CR>
