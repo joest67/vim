@@ -138,7 +138,7 @@ set clipboard=unnamed
     " ignore pep8 character lenght limit
     let g:syntastic_python_flake8_args = '--ignore=E501,E402'
     " jump the cursor to the first detected issue
-    let g:syntastic_auto_jump=1
+    " let g:syntastic_auto_jump=1
 
 " jedi
 let g:jedi#documentation_command = "L"
@@ -237,7 +237,6 @@ set scrolloff=3                " Minimum lines to keep above and below cursor
 set laststatus=2               " always show statusline
 set backspace=indent,eol,start " Backspace for dummys
 set linespace=0                " No extra spaces between rows
-set nu                         " Line numbers on
 set showmatch                  " Show matching brackets/parenthesis
 set incsearch                  " Find as you type search
 set hlsearch                   " Highlight search terms
