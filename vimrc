@@ -50,7 +50,8 @@ Plugin 'majutsushi/tagbar'
 " lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
 
-Plugin 'ap/vim-buftabline'
+" Plugin 'ap/vim-buftabline'
+Plugin 'humiaozuzu/TabBar'
 
 "This plugin for Vim enable an auto-close chars feature for you.
 " conflict with youcompleteme
@@ -69,6 +70,7 @@ Plugin 'godlygeek/tabular'
 "vim plugins for HTML and CSS hi-speed coding.
 "see:http://mattn.github.io/emmet-vim/
 Plugin 'mattn/emmet-vim'
+Plugin 'joest67/vim-template'
 
 "" Colorthemes
 Plugin 'altercation/vim-colors-solarized'
