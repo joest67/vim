@@ -43,19 +43,10 @@ Plugin 'python-rope/ropevim'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" Vim plugin that displays tags in a window, ordered by scope
-Plugin 'majutsushi/tagbar'
-
-" Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
 
-" Plugin 'ap/vim-buftabline'
-Plugin 'humiaozuzu/TabBar'
-
-"This plugin for Vim enable an auto-close chars feature for you.
-" conflict with youcompleteme
-" Plugin 'Townk/vim-autoclose'
+Plugin 'wooparadog/TabBar'
 
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
@@ -132,6 +123,11 @@ set clipboard=unnamed
 """""""""""""""""""""""""""""""""""""""""""""
 "          vim plugin config                "
 """""""""""""""""""""""""""""""""""""""""""""
+" TabBar
+    let g:Tb_SplitToEdge = 1
+    let g:Tb_UseSingleClick = 1
+    let g:Tb_MapCTabSwitchBufs = 1
+
 " syntastic
     " check when open file
     let g:syntastic_check_on_open = 1
@@ -346,11 +342,3 @@ map k gk
 
 " Ag, search
     nnoremap K :Ag!<SPACE>
-
-" Tagbar
-    nnoremap <silent> <leader>t :TagbarToggle<CR>
-
-" vim-buftabline
-" use tab to choose tab
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprev<CR>
