@@ -68,6 +68,8 @@ Plugin 'altercation/vim-colors-solarized'
 " one colorscheme pack to rule them all!
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'tpope/vim-commentary'
+
 " Syntaxes
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'cstrahan/vim-capnp'
@@ -152,6 +154,9 @@ let g:jedi#documentation_command = "L"
     let g:gitgutter_enabled = 1
     let g:gitgutter_realtime = 0
     let g:gitgutter_eager = 0
+
+" Nerdtree
+    map <leader>t :NERDTreeToggle<cr>
 
 " Tabularize {
     if exists(":Tabularize")
