@@ -151,6 +151,12 @@ let g:jedi#documentation_command = "L"
 
 " Gitgutter
     nmap <leader>g :GitGutterToggle<CR>
+    nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
+    nmap <Leader>ha <Plug>GitGutterStageHunk
+    nmap <Leader>hu <Plug>GitGutterRevertHunk
+    nmap ]h <Plug>GitGutterNextHunk
+    nmap [h <Plug>GitGutterPrevHunk
+
     let g:gitgutter_enabled = 1
     let g:gitgutter_realtime = 0
     let g:gitgutter_eager = 0
