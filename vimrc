@@ -140,10 +140,8 @@ set clipboard=unnamed
     " jump the cursor to the first detected issue
     " let g:syntastic_auto_jump=1
 
-" jedi
-let g:jedi#documentation_command = "L"
-
 " Ctrlp
+    nmap <leader> pr :CtrlPClearCache<CR>
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$',
