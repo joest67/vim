@@ -66,7 +66,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'tpope/vim-commentary'
-Plugin 'solars/github-vim'
+Plugin 'joest67/github-vim'
 
 " Syntaxes
 Plugin 'Glench/Vim-Jinja2-Syntax'
