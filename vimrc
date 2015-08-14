@@ -141,7 +141,7 @@ set clipboard=unnamed
     " let g:syntastic_auto_jump=1
 
 " Ctrlp
-    nmap <leader> pr :CtrlPClearCache<CR>
+    nmap <leader>pr :CtrlPClearCache<CR>
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$',
