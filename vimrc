@@ -43,9 +43,6 @@ Plugin 'python-rope/ropevim'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" lean & mean status/tabline for vim that's light as air
-Plugin 'bling/vim-airline'
-
 Plugin 'wooparadog/TabBar'
 
 " A Vim plugin which shows a git diff in the gutter (sign column) and
@@ -69,6 +66,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'tpope/vim-commentary'
+Plugin 'solars/github-vim'
 
 " Syntaxes
 Plugin 'Glench/Vim-Jinja2-Syntax'
