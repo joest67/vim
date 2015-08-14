@@ -8,10 +8,10 @@ help:
 	@echo ' make update       update to newest version '
 
 init:
-	git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
+	git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim -o upstream
 
 gitupdate:
-	git checkout master && git fetch && git rebase origin/master
+	git checkout master && git fetch && git rebase upstream/master
 
 vimupdate:
 	vim +PluginInstall! +PluginClean +qall
