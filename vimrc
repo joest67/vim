@@ -157,41 +157,6 @@ set clipboard=unnamed
     let g:gitgutter_realtime = 0
     let g:gitgutter_eager = 0
 
-" Nerdtree
-    map <leader>t :NERDTreeToggle<cr>
-
-" Tabularize {
-    if exists(":Tabularize")
-      nmap <leader>a\ :Tabularize /\<CR>
-      vmap <leader>a\ :Tabularize /\<CR>
-      nmap <leader>a= :Tabularize /=<CR>
-      vmap <leader>a= :Tabularize /=<CR>
-      nmap <leader>a: :Tabularize /:<CR>
-      vmap <leader>a: :Tabularize /:<CR>
-      nmap <leader>a:: :Tabularize /:\zs<CR>
-      vmap <leader>a:: :Tabularize /:\zs<CR>
-      nmap <leader>a, :Tabularize /,<CR>
-      vmap <leader>a, :Tabularize /,<CR>
-      nmap <leader>a<Bar> :Tabularize /<Bar><CR>
-      vmap <leader>a<Bar> :Tabularize /<Bar><CR>
-
-      " The following function automatically aligns when typing a
-      " supported character
-      inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-      function! s:align()
-          let p = '^\s*|\s.*\s|\s*$'
-          if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-              let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-              let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-              Tabularize/|/l1
-              normal! 0
-              call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-          endif
-      endfunction
-
-    endif
-
 " Fugitive
     nnoremap <silent> <leader>gs :Gstatus<CR>
     nnoremap <silent> <leader>gd :Gdiff<CR>
@@ -213,8 +178,6 @@ let &colorcolumn=80
 " ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-set cmdheight=1
-
 set background=dark        " Assume a dark background
 if has('gui_running')
     color solarized
@@ -223,7 +186,7 @@ if has('gui_running')
     set guioptions-=L          " remove the left scrollbar
     set guioptions-=r          " remove the right scrollbar
 else
-    color molokai
+    color default
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
     set term=builtin_xterm     " Make terminal stuff works
@@ -290,9 +253,6 @@ noremap <C-k> <C-w><C-k>
 noremap <C-h> <C-w><C-h>
 noremap <C-l> <C-w><C-l>
 
-" lazy press <ESC>
-" inoremap jk <Esc>
-
 " quick save
 noremap <Leader>s :update<CR>
 
@@ -309,41 +269,9 @@ map <leader>D :bufdo bdelete<cr>:q<cr>
 map j gj
 map k gk
 
+" Nerdtree
+    map <leader>t :NERDTreeToggle<cr>
 
-" Tabularize {
-    if exists(":Tabularize")
-      nmap <leader>a= :Tabularize /=<CR>
-      vmap <leader>a= :Tabularize /=<CR>
-      nmap <leader>a: :Tabularize /:<CR>
-      vmap <leader>a: :Tabularize /:<CR>
-      nmap <leader>a| :Tabularize /|<CR>
-      vmap <leader>a| :Tabularize /|<CR>
-      nmap <leader>a:: :Tabularize /:\zs<CR>
-      vmap <leader>a:: :Tabularize /:\zs<CR>
-      nmap <leader>a, :Tabularize /,<CR>
-      vmap <leader>a, :Tabularize /,<CR>
-      nmap <leader>a<Bar> :Tabularize /<Bar><CR>
-      vmap <leader>a<Bar> :Tabularize /<Bar><CR>
-
-      " The following function automatically aligns when typing a
-      " supported character
-      inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-      function! s:align()
-          let p = '^\s*|\s.*\s|\s*$'
-          if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-              let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-              let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-              Tabularize/|/l1
-              normal! 0
-              call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-          endif
-      endfunction
-
-    endif
-
-" NERDTree
-    nnoremap <F2> :NERDTreeToggle <CR>
     " show current file in tree
     map <leader>e :NERDTreeFind<CR>
 
