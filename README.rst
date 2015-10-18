@@ -32,9 +32,8 @@ YouCompleteMe
 .. code:: bash
 
     $ cd $HOME/.vim/bundle/YouCompleteMe
-    # may only need in Mac OS
     $ git submodule update --init --recursive
-    $ ./install.sh --clang-completer
+    $ ./install.py --clang-completer
 
 
 UPDATE
