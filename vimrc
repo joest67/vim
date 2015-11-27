@@ -171,6 +171,9 @@ set clipboard=unnamed
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" ropevim
+let g:ropevim_guess_project = 1
+
 """""""""""""""""""""""""""""""""""""""""""""
 "              Vim UI                       "
 """""""""""""""""""""""""""""""""""""""""""""
