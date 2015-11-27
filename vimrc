@@ -258,6 +258,9 @@ noremap <C-l> <C-w><C-l>
 " quick save
 noremap <Leader>s :update<CR>
 
+" tagbar
+noremap <Leader>s :TagbarToggle<CR>
+
 "clearing highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
 
