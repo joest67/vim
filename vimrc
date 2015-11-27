@@ -81,6 +81,7 @@ Plugin 'saltstack/salt-vim'
 Plugin 'sprsquish/thrift.vim'
 Plugin 'tshirtman/vim-cython'
 Plugin 'vim-scripts/nginx.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
