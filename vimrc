@@ -259,7 +259,7 @@ noremap <C-l> <C-w><C-l>
 noremap <Leader>s :update<CR>
 
 " tagbar
-noremap <Leader>s :TagbarToggle<CR>
+noremap <Leader>b :TagbarToggle<CR>
 
 "clearing highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
