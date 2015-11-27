@@ -43,7 +43,9 @@ Plugin 'python-rope/ropevim'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
-Plugin 'wooparadog/TabBar'
+" Plugin 'wooparadog/TabBar'
+
+Plugin 'majutsushi/tagbar'
 
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
