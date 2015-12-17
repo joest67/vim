@@ -50,6 +50,7 @@ Plugin 'majutsushi/tagbar'
 " A Vim plugin which shows a git diff in the gutter (sign column) and
 " stages/reverts hunks.
 Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 
 "A nicer Python indentation style for vim.
 Plugin 'hynek/vim-python-pep8-indent'
@@ -82,6 +83,11 @@ Plugin 'sprsquish/thrift.vim'
 Plugin 'tshirtman/vim-cython'
 Plugin 'vim-scripts/nginx.vim'
 Plugin 'fatih/vim-go'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'unblevable/quick-scope'
+Plugin 'elzr/vim-json'
+Plugin 'dyng/ctrlsf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -286,3 +292,6 @@ map k gk
 
 " Ag, search
     nnoremap K :Ag!<SPACE>
+
+" ctrlsf
+nmap     <leader>f <Plug>CtrlSFCwordPath
