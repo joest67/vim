@@ -85,8 +85,8 @@ Plugin 'vim-scripts/nginx.vim'
 Plugin 'fatih/vim-go'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'unblevable/quick-scope'
-Plugin 'elzr/vim-json'
+" Plugin 'unblevable/quick-scope'
+" Plugin 'elzr/vim-json'
 Plugin 'dyng/ctrlsf.vim'
 
 call vundle#end()            " required
@@ -143,7 +143,7 @@ set clipboard=unnamed
     " let g:syntastic_python_checkers = ['pylint']
     let g:syntastic_python_checkers = ['flake8']
     " ignore pep8 character lenght limit
-    let g:syntastic_python_flake8_args = '--ignore=E501,E402'
+    let g:syntastic_python_flake8_args = '--ignore=E402'
     " jump the cursor to the first detected issue
     " let g:syntastic_auto_jump=1
 
@@ -179,7 +179,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " ropevim
-let g:ropevim_guess_project = 1
+" let g:ropevim_guess_project = 1
 
 """""""""""""""""""""""""""""""""""""""""""""
 "              Vim UI                       "
