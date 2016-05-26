@@ -52,9 +52,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 
-"A nicer Python indentation style for vim.
-Plugin 'hynek/vim-python-pep8-indent'
-
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
@@ -177,6 +174,7 @@ set clipboard=unnamed
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_filetype_whitelist = { 'python': 1 }
 
 " ropevim
 " let g:ropevim_guess_project = 1
