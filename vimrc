@@ -143,6 +143,10 @@ set clipboard=unnamed
     let g:syntastic_python_flake8_args = '--ignore=E402'
     " jump the cursor to the first detected issue
     " let g:syntastic_auto_jump=1
+    let g:syntastic_mode_map = {
+                \ "mode": "passive",
+                \ "active_filetypes": ["python"],
+                \ "passive_filetypes": []}
 
 " Ctrlp
     nmap <leader>pr :CtrlPClearCache<CR>
