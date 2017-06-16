@@ -7,7 +7,7 @@ for i in $HOME/.vim $HOME/.vimrc; do [ -e $i ] && mv $i $i.$today; done
 
 # clone vim
 echo "Cloning vim"
-/usr/bin/env git clone git://github.com/joest67/vim.git -o upstream $HOME/.vim
+/usr/bin/env git clone git@github.com:joest67/vim.git -o upstream $HOME/.vim
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 
 mkdir $HOME/.vim/backup
