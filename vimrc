@@ -66,7 +66,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'tpope/vim-commentary'
-Plugin 'joest67/github-vim'
+" Plugin 'joest67/github-vim'
 
 " Syntaxes
 Plugin 'Glench/Vim-Jinja2-Syntax'
@@ -76,7 +76,6 @@ Plugin 'groenewege/vim-less'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
 Plugin 'saltstack/salt-vim'
-Plugin 'sprsquish/thrift.vim'
 Plugin 'tshirtman/vim-cython'
 Plugin 'vim-scripts/nginx.vim'
 Plugin 'fatih/vim-go'
@@ -178,7 +177,8 @@ set clipboard=unnamed
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_filetype_whitelist = { 'python': 1 }
+let g:ycm_filetype_whitelist = { 'python': 1 , 'java': 1}
+
 
 " ropevim
 " let g:ropevim_guess_project = 1
