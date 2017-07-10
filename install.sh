@@ -13,10 +13,10 @@ ln -s $HOME/.vim/vimrc $HOME/.vimrc
 mkdir $HOME/.vim/backup
 
 # install
-cd $HOME/.vim && make install || echo "Installation ERROR!"
+cd $HOME/.vim && make install || echo "Install ERROR!"
 
 # extra_install
-cd $HOME/.vim && make extra_install || echo "Installation ERROR!"
+cd $HOME/.vim && make extra_install || echo "Extra Install ERROR!"
 
 # custom_install
-cd $HOME/.vim && make custom_install || echo "Installation ERROR!"
+cd $HOME/.vim && make custom_install || echo "Custom Install ERROR!"

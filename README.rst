@@ -41,7 +41,7 @@ UPDATE
 
 .. code:: bash
 
-	$ cd $HOME/._vim
+	$ cd $HOME/.vim
 	$ make update
 
 QA
