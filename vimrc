@@ -35,10 +35,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 
 " best auto complete tool I have ever used(jedi, supertab...)
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " vim mode that uses rope library to provide features like python refactorings
-Plugin 'python-rope/ropevim'
+" Plugin 'python-rope/ropevim'
 
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -187,7 +187,7 @@ let g:ycm_filetype_whitelist = { 'python': 1 , 'java': 1}
 "              Vim UI                       "
 """""""""""""""""""""""""""""""""""""""""""""
 syntax on
-let &colorcolumn=80
+" let &colorcolumn=80
 
 " ignore compiled files
 set wildignore=*.o,*~,*.pyc
