@@ -4,6 +4,8 @@
 " set the runtime path to include Vundle and initialize
 set nocompatible              " be iMproved, required
 filetype off                  " required
+let loaded_netrw = 1
+let loaded_netrwPlugin = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,9 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""
 "           personal plugin start           "
 """""""""""""""""""""""""""""""""""""""""""""
-" Syntastic is a syntax checking plugin for Vim
-Plugin 'scrooloose/syntastic'
-
 " Highlights trailing whitespace in red and provides
 Plugin 'bronson/vim-trailing-whitespace'
 
@@ -45,45 +44,23 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 " Plugin 'wooparadog/TabBar'
 
-Plugin 'majutsushi/tagbar'
-
-" A Vim plugin which shows a git diff in the gutter (sign column) and
-" stages/reverts hunks.
-Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 
-" Vim script for text filtering and alignment
-Plugin 'godlygeek/tabular'
-
-"vim plugins for HTML and CSS hi-speed coding.
-"see:http://mattn.github.io/emmet-vim/
-Plugin 'mattn/emmet-vim'
 Plugin 'joest67/vim-template'
 
 "" Colorthemes
 Plugin 'altercation/vim-colors-solarized'
-" one colorscheme pack to rule them all!
-Plugin 'flazz/vim-colorschemes'
 
 Plugin 'tpope/vim-commentary'
 " Plugin 'joest67/github-vim'
 
 " Syntaxes
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'cstrahan/vim-capnp'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'groenewege/vim-less'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
-Plugin 'saltstack/salt-vim'
-Plugin 'tshirtman/vim-cython'
-Plugin 'vim-scripts/nginx.vim'
-Plugin 'fatih/vim-go'
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 " Plugin 'unblevable/quick-scope'
 " Plugin 'elzr/vim-json'
-Plugin 'dyng/ctrlsf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -95,7 +72,10 @@ filetype plugin indent on    " required
 " " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 
 " When vimrc is edited, reload it
-autocmd! BufWritePost ~/.vimrc source ~/.vimrc
+augroup vimrc_reload
+    autocmd!
+    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc source ~/.vimrc
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""
 "          vim system config                "
@@ -103,10 +83,6 @@ autocmd! BufWritePost ~/.vimrc source ~/.vimrc
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
 set fencs=utf-8,gb2312,gbk     " Sets the default encoding
-filetype plugin indent on      " Automatically detect file types.
-
-" When vimrc is edited, reload it
-autocmd! BufWritePost ~/.vimrc source ~/.vimrc
 
 " backup
 set noswapfile
@@ -128,60 +104,43 @@ set clipboard=unnamed
 """""""""""""""""""""""""""""""""""""""""""""
 "          vim plugin config                "
 """""""""""""""""""""""""""""""""""""""""""""
-" TabBar
-    let g:Tb_SplitToEdge = 1
-    let g:Tb_UseSingleClick = 1
-    let g:Tb_MapCTabSwitchBufs = 1
-
-" syntastic
-    " check when open file
-    let g:syntastic_check_on_open = 1
-    " let g:syntastic_python_checkers = ['pylint']
-    let g:syntastic_python_checkers = ['flake8']
-    " ignore pep8 character lenght limit
-    let g:syntastic_python_flake8_args = '--ignore=E402'
-    " jump the cursor to the first detected issue
-    " let g:syntastic_auto_jump=1
-    let g:syntastic_mode_map = {
-                \ "mode": "passive",
-                \ "active_filetypes": ["python"],
-                \ "passive_filetypes": []}
-
 " Ctrlp
     nmap <leader>pr :CtrlPClearCache<CR>
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$',
+        \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$\|node_modules$',
         \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$\|\.pyc$\|__pycache__' }
 
-" Gitgutter
-    nmap <leader>g :GitGutterToggle<CR>
-    nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
-    nmap <Leader>ha <Plug>GitGutterStageHunk
-    nmap <Leader>hu <Plug>GitGutterRevertHunk
-    nmap ]h <Plug>GitGutterNextHunk
-    nmap [h <Plug>GitGutterPrevHunk
-
-    let g:gitgutter_enabled = 1
-    let g:gitgutter_realtime = 0
-    let g:gitgutter_eager = 0
-
 " Fugitive
-    nnoremap <silent> <leader>gs :Gstatus<CR>
-    nnoremap <silent> <leader>gd :Gdiff<CR>
-    nnoremap <silent> <leader>gc :Gcommit<CR>
-    nnoremap <silent> <leader>gb :Gblame<CR>
-    nnoremap <silent> <leader>gl :Glog<CR>
+    nnoremap <silent> <leader>gs :Git<CR>
+    nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+    nnoremap <silent> <leader>gc :Git commit<CR>
+    nnoremap <silent> <leader>gb :Git blame<CR>
+    nnoremap <silent> <leader>gl :Git log<CR>
     nnoremap <silent> <leader>gp :Git push<CR>
 
-" youcompleteme
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_filetype_whitelist = { 'python': 1 , 'java': 1}
+" Tabular is kept as an optional native package and loaded on first use.
+function! s:LoadTabular() abort
+    let l:tabular_path = expand('~/.vim/pack/lazy/opt/tabular')
+    if !isdirectory(l:tabular_path)
+        echoerr 'Tabular plugin not found: ' . l:tabular_path
+        return 0
+    endif
 
+    execute 'set runtimepath^=' . fnameescape(l:tabular_path)
+    runtime plugin/Tabular.vim
+    runtime after/plugin/TabularMaps.vim
+    return exists(':Tabularize') == 2
+endfunction
 
-" ropevim
-" let g:ropevim_guess_project = 1
+function! s:Tabularize(line1, line2, bang, args) abort
+    silent! delcommand Tabularize
+    if <SID>LoadTabular()
+        execute a:line1 . ',' . a:line2 . 'Tabularize' . a:bang . ' ' . a:args
+    endif
+endfunction
+
+command! -nargs=* -range -bang Tabularize call <SID>Tabularize(<line1>, <line2>, '<bang>', <q-args>)
 
 """""""""""""""""""""""""""""""""""""""""""""
 "              Vim UI                       "
@@ -201,9 +160,6 @@ if has('gui_running')
     set guioptions-=r          " remove the right scrollbar
 else
     color default
-    let g:solarized_termcolors=256
-    let g:solarized_termtrans=1
-    set term=builtin_xterm     " Make terminal stuff works
     set t_Co=256
 endif
 
@@ -270,9 +226,6 @@ noremap <C-l> <C-w><C-l>
 " quick save
 noremap <Leader>s :update<CR>
 
-" tagbar
-noremap <Leader>b :TagbarToggle<CR>
-
 "clearing highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
 
@@ -294,6 +247,3 @@ map k gk
 
 " Ag, search
     nnoremap K :Ag!<SPACE>
-
-" ctrlsf
-nmap     <leader>f <Plug>CtrlSFCwordPath
